@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samarth Srivastav — BCA student and developer.">
+  <title>Samarth Srivastav — Developer</title>
+
+  <style>
+    :root {
+      --paper: #f2f0ea;
+      --ink: #151515;
+      --muted: #686762;
+      --line: #c9c6bd;
+      --blue: #1649d8;
+      --blue-dark: #1036a1;
+      --white: #faf9f5;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    ::selection {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(calc(100% - 48px), var(--max));
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      height: 74px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      width: min(calc(100% - 48px), var(--max));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mark {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .mark::after {
+      content: " / developer";
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Intro */
+    .intro {
+      padding: 76px 0 90px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 50px;
+    }
+
+    .side-note {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+      padding-top: 9px;
+    }
+
+    .side-note span {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .intro h1 {
+      max-width: 900px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(54px, 8vw, 108px);
+      font-weight: 400;
+      letter-spacing: -0.075em;
+      line-height: 0.88;
+    }
+
+    .intro h1 em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .intro-bottom {
+      margin-top: 54px;
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 50px;
+    }
+
+    .intro-copy {
+      max-width: 610px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .intro-copy p {
+      margin: 0 0 24px;
+    }
+
+    .inline-link {
+      color: var(--blue);
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 2px;
+    }
+
+    .inline-link:hover {
+      color: var(--blue-dark);
+      border-color: var(--blue-dark);
+    }
+
+    /* Work */
+    .work {
+      padding: 88px 0;
+    }
+
+    .section-label {
+      font-family: monospace;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 35px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 145px 1fr 160px;
+      gap: 50px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-number {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .project h2 {
+      margin: -5px 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 37px;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+    }
+
+    .project p {
+      max-width: 610px;
+      color: #4f4e4a;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .project-meta {
+      text-align: right;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .project:hover h2 {
+      color: var(--blue);
+    }
+
+    /* About / skills */
+    .details {
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 145px 1fr 1fr;
+      gap: 50px;
+    }
+
+    .details h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+    }
+
+    .details p {
+      margin: 0;
+      color: #4f4e4a;
+      max-width: 470px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      align-content: flex-start;
+    }
+
+    .skill {
+      border-bottom: 1px solid var(--line);
+      padding: 3px 0;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .education {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .education small {
+      display: block;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .education strong {
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--ink);
+      color: var(--white);
+      padding: 78px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 50px;
+    }
+
+    .contact .section-label {
+      color: #85847f;
+    }
+
+    .contact h2 {
+      max-width: 760px;
+      margin: 0 0 35px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(45px, 6vw, 76px);
+      font-weight: 400;
+      letter-spacing: -0.065em;
+      line-height: 0.95;
+    }
+
+    .contact h2 em {
+      color: #829eff;
+      font-style: italic;
+    }
+
+    .contact-link {
+      display: inline-block;
+      color: white;
+      border-bottom: 1px solid #777;
+      padding-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .contact-link:hover {
+      color: #829eff;
+      border-color: #829eff;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--ink);
+      color: #777672;
+      padding: 20px 0 30px;
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .wrap,
+      .header-inner {
+        width: min(calc(100% - 30px), var(--max));
+      }
+
+      header { height: 62px; }
+
+      nav { gap: 14px; }
+      nav a:nth-child(1) { display: none; }
+
+      .intro {
+        padding: 55px 0 65px;
+      }
+
+      .intro-grid,
+      .intro-bottom,
+      .project,
+      .details-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .side-note {
+        padding-top: 0;
+      }
+
+      .intro h1 {
+        font-size: clamp(52px, 17vw, 90px);
+      }
+
+      .intro-bottom {
+        margin-top: 35px;
+      }
+
+      .project {
+        padding: 25px 0;
+      }
+
+      .project h2 {
+        font-size: 31px;
+      }
+
+      .project-meta {
+        text-align: left;
+      }
+
+      .work,
+      .details {
+        padding: 65px 0;
+      }
+
+      .contact {
+        padding: 65px 0;
+      }
+
+      .footer-inner {
+        gap: 10px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="mark" href="#">Samarth</a>
+
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="side-note">
+            <span>Delhi, India</span>
+            <span>2026</span>
+          </div>
+
+          <h1>
+            I make things<br>
+            for the <em>web.</em>
+          </h1>
+        </div>
+
+        <div class="intro-bottom">
+          <div class="side-note">01 — Hello</div>
+
+          <div class="intro-copy">
+            <p>
+              I'm Samarth, a BCA student at MAIMS and a developer figuring things
+              out by actually building them.
+            </p>
+            <p>
+              I work mostly with HTML, CSS, React, TypeScript and the MERN stack.
+              I like interfaces that are simple, fast and have a reason for
+              every element.
+            </p>
+            <a class="inline-link" href="#work">See selected work ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-label">Selected work</div>
+
+        <article class="project">
+          <div class="project-number">01</div>
+
+          <div>
+            <h2>Public Problem Solving Site</h2>
+            <p>
+              A platform concept connecting citizens, universities and industries.
+              Citizens can raise real-world problems while organizations can
+              propose solutions.
+            </p>
+          </div>
+
+          <div class="project-meta">
+            WEB PLATFORM<br>
+            REACT / JS
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-number">02</div>
+
+          <div>
+            <h2>Steam Tinder</h2>
+            <p>
+              A game-discovery concept built around a deliberately simple idea:
+              swipe through games until something worth playing appears.
+            </p>
+          </div>
+
+          <div class="project-meta">
+            PERSONAL PROJECT<br>
+            WEB / UI
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="details" id="about">
+      <div class="wrap">
+        <div class="details-grid">
+          <div class="section-label">About me</div>
+
+          <div>
+            <h2>Still learning. Still shipping.</h2>
+            <p>
+              I'm currently studying Computer Applications and spending a lot
+              of that time making small projects, experimenting with interfaces,
+              and learning how the pieces behind a web application fit together.
+            </p>
+
+            <div class="education">
+              <small>EDUCATION</small>
+              <strong>MAIMS Institute — Bachelor of Computer Applications</strong>
+            </div>
+          </div>
+
+          <div>
+            <h2>Tools</h2>
+            <div class="skills">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">React</span>
+              <span class="skill">TypeScript</span>
+              <span class="skill">MERN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="section-label">Contact</div>
+
+          <div>
+            <h2>
+              Have something<br>
+              <em>interesting?</em>
+            </h2>
+
+            <!-- Replace this with your real email / LinkedIn -->
+            <a class="contact-link" href="mailto:your-email@example.com">
+              your-email@example.com ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Samarth Srivastav</span>
+      <span>HTML + CSS / no framework required</span>
+    </div>
+  </footer>
+
+</body>
+</html>
